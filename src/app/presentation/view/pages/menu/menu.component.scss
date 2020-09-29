@@ -11,11 +11,21 @@
   flex-direction: column;
   justify-content: space-evenly;
 
+  color: #7e7e7e;
+  cursor: pointer;
+
+  transition: all 0.2s;
+
   p {
     font-size: 18px;
   }
 
   .mat-icon {
+    width: 35px;
     font-size: 35px;
+  }
+
+  &:hover {
+    background-color: darken($color: #fff, $amount: 8);
   }
 }

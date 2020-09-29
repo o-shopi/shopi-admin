@@ -1,15 +1,23 @@
-// @import '../../../../../../assets/scss/utils/variables';
-// @import '../../../../../../assets/scss/utils/colors';
+.top-nav {
+  max-height: 75px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #46ab99;
 
-// :host {
-//   .top-nav {
-//     z-index: $header-zindex;
-//     border: 1px solid $border-navs;
-//     padding-left: 50px;
-//     background-color: #fff;
-//   }
-//   .logo {
-//     width: 100px;
-//     height: 60px;
-//   }
-// }
+  .app-title {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+
+    color: #fff;
+    font-size: 29px;
+    letter-spacing: 7px;
+
+    margin-top: 9px;
+  }
+}
+
+.logo {
+  height: 48px;
+  width: 48px;
+}
