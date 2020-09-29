@@ -1,0 +1,21 @@
+.card-wrapper {
+  min-width: 400px;
+}
+
+.mat-card {
+  width: 180px;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  p {
+    font-size: 18px;
+  }
+
+  .mat-icon {
+    font-size: 35px;
+  }
+}

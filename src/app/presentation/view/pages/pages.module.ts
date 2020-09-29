@@ -5,25 +5,19 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { BaseModule } from './base/base.module';
 import { PagesComponent } from './pages.component';
 import { LoginModule } from './login/login.module';
-import { ConsultaModule } from './consulta/consulta.module';
-import { RelatorioModule } from './relatorio/relatorio.module';
-import { ChatbotModule } from './chatbot/chatbot.module';
 import { RouterModule } from '@angular/router';
-import { MobileComponent } from './mobile/mobile.component';
 import { AppMaterialModule } from 'src/app/app-material.module';
+import { MenuComponent } from './menu/menu.component';
 
 
 
 @NgModule({
-  declarations: [PagesComponent, MobileComponent],
+  declarations: [PagesComponent, MenuComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
     BaseModule,
     LoginModule,
-    RelatorioModule,
-    ConsultaModule,
-    ChatbotModule,
     RouterModule,
     AppMaterialModule
   ]

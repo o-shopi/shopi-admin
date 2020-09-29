@@ -12,6 +12,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   goSearch(user: string, password: string): void {
-    this.router.navigate(['consulta']);
+    this.router.navigate(['menu']);
   }
 }

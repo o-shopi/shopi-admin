@@ -1,50 +1,37 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-auto login-content">
-      <span class="title mb-3">
-        Entrar
-      </span>
-      <div>
-        <form>
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="E-mail"
-              #user
-            />
-          </div>
-          <div class="form-group">
-            <div class="password">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Senha"
-                formControlName="password"
-                id="password"
-                #password
-              />
-              <!-- <mat-icon (click)="showPassword()">remove_red_eye</mat-icon> -->
-            </div>
-            <div class="text-right">
-              <span class="forget-password">
-                Esqueceu a senha?
-              </span>
-            </div>
-          </div>
-          <div class="btn-area">
-            <button
-              class="btn-login"
-              type="submit"
-              mat-raised-button
-              color="primary"
-              (click)="goSearch(user, password)"
-            >
-              Entrar
-            </button>
-          </div>
-        </form>
+<div
+  class="container-fluid h-100 d-flex justify-content-center align-items-center"
+>
+  <form>
+    <span class="title mb-3"> Entrar </span>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="E-mail" #user />
+    </div>
+    <div class="form-group">
+      <div class="password">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Senha"
+          formControlName="password"
+          id="password"
+          #password
+        />
+        <!-- <mat-icon (click)="showPassword()">remove_red_eye</mat-icon> -->
+      </div>
+      <div class="text-right">
+        <span class="forget-password"> Esqueceu a senha? </span>
       </div>
     </div>
-  </div>
+    <div class="btn-area">
+      <button
+        class="btn-login"
+        type="submit"
+        mat-raised-button
+        color="primary"
+        (click)="goSearch(user, password)"
+      >
+        Entrar
+      </button>
+    </div>
+  </form>
 </div>

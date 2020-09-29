@@ -18,10 +18,8 @@ import { Router, NavigationStart } from '@angular/router';
 
     <ng-template #notLoginPage>
       <app-header></app-header>
-      <app-sidenav></app-sidenav>
-      <div class="main-content">
-        <router-outlet></router-outlet>
-      </div>
+      <!-- <app-sidenav></app-sidenav> -->
+      <router-outlet></router-outlet>
     </ng-template>
   `
 })
