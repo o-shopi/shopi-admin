@@ -8,11 +8,12 @@ import { LoginModule } from './login/login.module';
 import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from 'src/app/app-material.module';
 import { MenuComponent } from './menu/menu.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
 @NgModule({
-  declarations: [PagesComponent, MenuComponent],
+  declarations: [PagesComponent, MenuComponent, AddProductComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

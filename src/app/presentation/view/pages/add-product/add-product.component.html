@@ -1,0 +1,40 @@
+<div
+  class="container-fluid h-100 d-flex justify-content-center align-items-center"
+>
+  <mat-card class="align-items-baseline d-flex">
+    <input hidden type="file" multiple accept="image/*" #file />
+    <div
+      (click)="file.click()"
+      class="image-card align-items-center align-self-center d-flex flex-column image-card justify-content-center text-center"
+    >
+      <mat-icon>add_to_photos</mat-icon>
+      <span class="image-text d-flex flex-column"
+        >Adicione<span class="d-inline-block">uma ou mais fotos</span></span
+      >
+    </div>
+    <div class="row">
+      <mat-form-field class="col-12">
+        <input matInput placeholder="Nome/Descricao" type="text" />
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <input matInput placeholder="Identificador" type="number" />
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <input matInput placeholder="SKU" type="text" />
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <mat-select placeholder="Categoria">
+          <mat-option value="option">Videogames</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <input matInput placeholder="Valor" type="number" />
+      </mat-form-field>
+
+    </div>
+  </mat-card>
+</div>
