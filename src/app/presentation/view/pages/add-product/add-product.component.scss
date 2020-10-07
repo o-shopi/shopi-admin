@@ -1,8 +1,10 @@
 .mat-card {
-max-width: 940px;
+  max-width: 940px;
 }
 
 .image-card {
+  cursor: pointer;
+
   min-width: 200px;
   height: 200px;
   background-color: #f7f7f7;
@@ -15,5 +17,19 @@ max-width: 940px;
     height: 42px;
 
     margin-bottom: 24px;
+    padding-left: 6px;
   }
+}
+
+button {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+
+  width: 162px;
+  height: 37px;
+}
+
+.mat-select-panel {
+  margin-top: 51px;
 }

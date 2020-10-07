@@ -1,2 +1,2 @@
-export * from './query-types';
+export * from './products';
 export * from './states';

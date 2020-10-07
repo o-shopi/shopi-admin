@@ -38,4 +38,8 @@ body {
   input[type='number'] {
     -moz-appearance: textfield; /* Firefox */
   }
+
+  button:focus {
+    outline: none;
+  }
 }

@@ -17,4 +17,8 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['adicionar-produto']);
   }
 
+  editProducts(): void {
+    this.router.navigate(['editar-produto']);
+  }
+
 }

@@ -6,14 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { DataModule } from './data/data.module';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-
-
+import { SweetAlertService } from 'ngx-sweetalert2';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +17,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     DataModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [SweetAlertService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
