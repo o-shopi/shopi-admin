@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProdutoService } from 'src/app/presentation/controllers/produto/produto.service';
 import { CATEGORIES } from '../../../shared/enums/products';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-product',
@@ -12,6 +13,7 @@ export class AddProductComponent implements OnInit {
   images: FileList;
   formGroup: FormGroup;
   productCategories = [...CATEGORIES];
+  isShowForm = true;
 
   constructor(private produtoService: ProdutoService) {}
 
@@ -41,10 +43,19 @@ export class AddProductComponent implements OnInit {
         categoria: this.formGroup.controls.categoria.value,
         valor: this.formGroup.controls.valor.value,
       };
+
       this.produtoService.insertProduct(payload).subscribe(
         (res) => {
-          alert('cadastrado com sucesso');
-          this.formGroup.reset();
+          this.isShowForm = false;
+          Swal.fire(
+            'Sucesso!',
+            'Produto cadastrado com sucesso!',
+            'success'
+          ).then((result) => {
+            this.isShowForm = true;
+            this.formGroup.reset();
+            this.formGroup.markAsUntouched();
+          });
         },
         (rej) => {}
       );

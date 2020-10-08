@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { DataModule } from './data/data.module';
-import { SweetAlertService } from 'ngx-sweetalert2';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +16,7 @@ import { SweetAlertService } from 'ngx-sweetalert2';
     DataModule,
     BrowserAnimationsModule,
   ],
-  providers: [SweetAlertService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

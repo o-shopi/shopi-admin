@@ -1,7 +1,7 @@
 <div
   class="container-fluid h-100 d-flex justify-content-center align-items-center"
 >
-  <mat-card class="align-items-baseline d-flex pb-5 pt-4">
+  <mat-card *ngIf="isShowForm" class="align-items-baseline d-flex pb-5 pt-4">
     <input
       hidden
       type="file"
