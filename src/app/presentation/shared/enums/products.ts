@@ -3,6 +3,7 @@ export const CATEGORIES = [
   'TVs',
   `CD's/DVD's/Blu-rays`,
   'Eletroportatil',
+  'Smartphones',
   'Som',
   'Roupas',
   'Tênis',

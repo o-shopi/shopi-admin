@@ -1,6 +1,7 @@
 <div
   class="container-fluid h-100 d-flex justify-content-center align-items-center"
 >
+  <app-back-button (backPress)="returnToMenu()"></app-back-button>
   <app-product-card
     *ngIf="isShowForm"
     (formSubmitted)="onSubmit($event)"

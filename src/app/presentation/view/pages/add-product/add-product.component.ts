@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { format } from 'date-fns';
 import { ProdutoService } from 'src/app/presentation/controllers/produto/produto.service';
 import { Product } from 'src/app/presentation/shared/interfaces';
@@ -18,13 +19,14 @@ export class AddProductComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
 
   onSubmit(form: FormGroup): void {
-    const lojistaId = Number((this.authService.getUserInfos()));
+    const lojistaId = Number(this.authService.getUserInfos());
 
     const payload: Product = {
       descricao: form.controls.descricao.value,
@@ -50,5 +52,9 @@ export class AddProductComponent implements OnInit {
       },
       (rej) => {}
     );
+  }
+
+  returnToMenu(): void {
+    this.router.navigate(['menu']);
   }
 }
