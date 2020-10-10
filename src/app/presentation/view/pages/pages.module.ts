@@ -12,6 +12,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from '../../shared/shared.module';
     MenuComponent,
     AddProductComponent,
     EditProductComponent,
+    DeleteProductComponent,
   ],
   imports: [
     CommonModule,

@@ -1,8 +1,8 @@
-@import './assets/scss/utils/colors';
-@import './assets/scss/themes/theme';
-@import './assets/scss/utils/reset';
-@import './assets/scss/utils/variables';
-@import './assets/scss/utils/base';
+@import "./assets/scss/utils/colors";
+@import "./assets/scss/themes/theme";
+@import "./assets/scss/utils/reset";
+@import "./assets/scss/utils/variables";
+@import "./assets/scss/utils/base";
 
 /**
 /* - DEBUG CSS
@@ -22,11 +22,8 @@
 
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  background:
-    url('assets/images/bg-front.svg')
-    no-repeat
-    174% 65vh;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("assets/images/bg-front.svg") no-repeat 174% 65vh;
   background-color: #f7f7f7;
 
   input::-webkit-outer-spin-button,
@@ -35,7 +32,7 @@ body {
     margin: 0;
   }
 
-  input[type='number'] {
+  input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
   }
 
@@ -45,5 +42,9 @@ body {
 
   .mat-select-panel {
     margin-top: 48px;
+  }
+
+  .swal2-styled.swal2-confirm {
+    background-color: #46ab99;
   }
 }

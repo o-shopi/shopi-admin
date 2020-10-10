@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addProducts(): void {
     this.router.navigate(['adicionar-produto']);
@@ -21,4 +19,7 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['editar-produto']);
   }
 
+  deleteProducts(): void {
+    this.router.navigate(['deletar-produto']);
+  }
 }

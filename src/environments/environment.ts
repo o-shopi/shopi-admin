@@ -10,5 +10,7 @@ export const environment = {
       'http://shopi-server-side.sa-east-1.elasticbeanstalk.com/server-side/lojista-item/listar',
     editar:
       'http://shopi-server-side.sa-east-1.elasticbeanstalk.com/server-side/lojista-item/atualizar',
+    excluir:
+      'http://shopi-server-side.sa-east-1.elasticbeanstalk.com/server-side/lojista-item/deletar',
   },
 };
