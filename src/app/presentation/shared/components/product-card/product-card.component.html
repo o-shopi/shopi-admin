@@ -11,11 +11,15 @@
     (click)="file.click()"
     class="image-card align-items-center align-self-center d-flex flex-column image-card justify-content-center text-center"
   >
-    <mat-icon>{{ !images ? "playlist_add" : "playlist_add_check" }}</mat-icon>
-    <span *ngIf="!images" class="image-text d-flex flex-column"
+    <mat-icon>{{
+      images || product ? "playlist_add_check" : "playlist_add"
+    }}</mat-icon>
+    <span *ngIf="!images && !product" class="image-text d-flex flex-column"
       >Adicione<span class="d-inline-block">uma ou mais fotos</span></span
     >
-    <span *ngIf="images" class="image-text">Imagens adicionadas!</span>
+    <span *ngIf="images || product" class="image-text"
+      >Imagens adicionadas!</span
+    >
   </div>
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row">
     <mat-form-field class="col-12">

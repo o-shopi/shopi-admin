@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { format } from 'date-fns';
 import { environment } from 'src/environments/environment';
+import { Product } from '../../shared/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class ProdutoService {
   constructor(private http: HttpClient) {}
 
-  insertProduct({ descricao, id, sku, categoria, valor }) {
+  insertProduct({ descricao, id, sku, categoria, valor }: Product) {
     const idLojista = this.getIdLojista();
     const body = {
       descricao,
@@ -25,6 +26,13 @@ export class ProdutoService {
 
   getAllProducts() {
     return this.http.get(environment.produtos.listarTodos);
+  }
+
+  editProduct(product: Product, oldId: number) {
+    const params = new HttpParams().append('id', String(oldId));
+    const body = { ...product };
+
+    return this.http.put(environment.produtos.editar, body, { params });
   }
 
   private getIdLojista(): number {

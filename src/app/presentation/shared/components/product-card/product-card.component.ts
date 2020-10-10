@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CATEGORIES } from '../../enums';
-import { CardMode } from '../../interfaces';
+import { CardMode, Product } from '../../interfaces';
 
 @Component({
   selector: 'app-product-card',
@@ -27,23 +27,21 @@ export class ProductCardComponent implements OnInit, OnChanges {
   @Input()
   clearFormDetect: true;
 
+  @Input()
+  product: Product | null = null;
+
   @Output()
   formSubmitted = new EventEmitter<FormGroup>();
 
   constructor() {}
 
   ngOnInit() {
-    this.formGroup = new FormGroup({
-      descricao: new FormControl(null, Validators.required),
-      id: new FormControl(null, Validators.required),
-      sku: new FormControl(null, Validators.required),
-      categoria: new FormControl(null, Validators.required),
-      valor: new FormControl(null, Validators.required),
-    });
+    this.initializeForm();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (
+      changes.clearFormDetect &&
       !changes.clearFormDetect.firstChange &&
       changes.clearFormDetect.currentValue
     ) {
@@ -61,6 +59,27 @@ export class ProductCardComponent implements OnInit, OnChanges {
     if (this.formGroup.valid) {
       this.formSubmitted.emit(this.formGroup);
     }
+  }
+
+  private initializeForm(): void {
+    if (this.product) {
+      this.formGroup = new FormGroup({
+        descricao: new FormControl(this.product.descricao, Validators.required),
+        id: new FormControl(this.product.id, Validators.required),
+        sku: new FormControl(this.product.sku, Validators.required),
+        categoria: new FormControl(this.product.categoria, Validators.required),
+        valor: new FormControl(this.product.valor, Validators.required),
+      });
+      return;
+    }
+
+    this.formGroup = new FormGroup({
+      descricao: new FormControl(null, Validators.required),
+      id: new FormControl(null, Validators.required),
+      sku: new FormControl(null, Validators.required),
+      categoria: new FormControl(null, Validators.required),
+      valor: new FormControl(null, Validators.required),
+    });
   }
 
   private resetForm(): void {

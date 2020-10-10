@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { format } from 'date-fns';
 import { ProdutoService } from 'src/app/presentation/controllers/produto/produto.service';
+import { Product } from 'src/app/presentation/shared/interfaces';
+import { AuthService } from 'src/app/presentation/shared/services';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,17 +16,24 @@ export class AddProductComponent implements OnInit {
   isShowForm = true;
   clearForm: boolean;
 
-  constructor(private produtoService: ProdutoService) {}
+  constructor(
+    private produtoService: ProdutoService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {}
 
   onSubmit(form: FormGroup): void {
-    const payload = {
+    const lojistaId = Number((this.authService.getUserInfos()));
+
+    const payload: Product = {
       descricao: form.controls.descricao.value,
       id: form.controls.id.value,
       sku: form.controls.sku.value,
       categoria: form.controls.categoria.value,
       valor: form.controls.valor.value,
+      lojistaId,
+      dataCadastro: format(new Date(), 'dd/MM/yyyy'),
     };
 
     this.produtoService.insertProduct(payload).subscribe(
