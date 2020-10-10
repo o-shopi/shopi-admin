@@ -1,7 +1,7 @@
 <div
   class="container-fluid h-100 d-flex justify-content-center align-items-center"
 >
-  <form>
+  <form [hidden]="isModalOpen">
     <span class="title mb-3"> Entrar </span>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="E-mail" #user />
@@ -25,7 +25,7 @@
     <div class="btn-area">
       <button
         class="btn-login"
-        type="submit"
+        type="button"
         mat-raised-button
         color="primary"
         (click)="goSearch(user, password)"
