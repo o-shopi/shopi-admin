@@ -23,6 +23,10 @@ export class ProdutoService {
     return this.http.post(environment.produtos.inserir, body);
   }
 
+  getAllProducts() {
+    return this.http.get(environment.produtos.listarTodos);
+  }
+
   private getIdLojista(): number {
     const id = sessionStorage.getItem('idLojista');
     if (id) {

@@ -1,68 +1,9 @@
 <div
   class="container-fluid h-100 d-flex justify-content-center align-items-center"
 >
-  <mat-card *ngIf="isShowForm" class="align-items-baseline d-flex pb-5 pt-4">
-    <input
-      hidden
-      type="file"
-      multiple
-      accept="image/*"
-      #file
-      (change)="addImages($event)"
-    />
-    <div
-      (click)="file.click()"
-      class="image-card align-items-center align-self-center d-flex flex-column image-card justify-content-center text-center"
-    >
-      <mat-icon>{{ !images ? "playlist_add" : "playlist_add_check" }}</mat-icon>
-      <span *ngIf="!images" class="image-text d-flex flex-column"
-        >Adicione<span class="d-inline-block">uma ou mais fotos</span></span
-      >
-      <span *ngIf="images" class="image-text">Imagens adicionadas!</span>
-    </div>
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row">
-      <mat-form-field class="col-12">
-        <input
-          matInput
-          placeholder="Nome/Descricao"
-          formControlName="descricao"
-          type="text"
-        />
-      </mat-form-field>
-
-      <mat-form-field class="col-6">
-        <input
-          matInput
-          placeholder="Identificador"
-          formControlName="id"
-          type="number"
-        />
-      </mat-form-field>
-
-      <mat-form-field class="col-6">
-        <input matInput placeholder="SKU" formControlName="sku" type="text" />
-      </mat-form-field>
-
-      <mat-form-field class="col-6">
-        <mat-select placeholder="Categoria" formControlName="categoria">
-          <mat-option
-            *ngFor="let category of productCategories"
-            [value]="category"
-            >{{ category }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="col-6">
-        <input
-          matInput
-          placeholder="Valor"
-          formControlName="valor"
-          type="text"
-          currencyMask
-        />
-      </mat-form-field>
-      <button type="submit" mat-raised-button color="primary">Adicionar</button>
-    </form>
-  </mat-card>
+  <app-product-card
+    *ngIf="isShowForm"
+    (formSubmitted)="onSubmit($event)"
+    [clearFormDetect]="clearForm"
+  ></app-product-card>
 </div>

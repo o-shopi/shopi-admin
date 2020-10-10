@@ -16,7 +16,6 @@ import { DataModule } from './data/data.module';
     DataModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

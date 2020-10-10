@@ -6,5 +6,7 @@ export const environment = {
   produtos: {
     inserir:
       'http://shopi-server-side.sa-east-1.elasticbeanstalk.com/server-side/lojista-item/inserir',
+    listarTodos:
+      'http://shopi-server-side.sa-east-1.elasticbeanstalk.com/server-side/lojista-item/listar',
   },
 };

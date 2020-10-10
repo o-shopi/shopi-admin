@@ -11,22 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
-
-export const customCurrencyMaskConfig = {
-  align: 'left',
-  allowNegative: false,
-  allowZero: true,
-  decimal: ',',
-  precision: 2,
-  prefix: 'R$ ',
-  suffix: '',
-  thousands: '.',
-  nullable: true,
-  min: null,
-  max: null,
-  inputMode: CurrencyMaskInputMode.FINANCIAL,
-};
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +29,7 @@ export const customCurrencyMaskConfig = {
     AppMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
+    SharedModule,
   ],
 })
 export class PagesModule {}
