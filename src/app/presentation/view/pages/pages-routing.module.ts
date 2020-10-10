@@ -5,6 +5,7 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 import { PagesComponent } from './pages.component';
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'adicionar-produto', component: AddProductComponent },
       { path: 'editar-produto', component: EditProductComponent },
       { path: 'deletar-produto', component: DeleteProductComponent },
+      { path: 'meus-pedidos', component: MyReservationsComponent },
     ]
   }
 ];

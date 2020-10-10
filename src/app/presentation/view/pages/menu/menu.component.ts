@@ -22,4 +22,8 @@ export class MenuComponent implements OnInit {
   deleteProducts(): void {
     this.router.navigate(['deletar-produto']);
   }
+
+  myReservations(): void {
+    this.router.navigate(['meus-pedidos']);
+  }
 }
