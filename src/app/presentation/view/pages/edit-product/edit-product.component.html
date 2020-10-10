@@ -1,6 +1,7 @@
 <div
   class="container-fluid h-100 d-flex justify-content-center align-items-center"
 >
+  <app-back-button (backPress)="returnToMenu()"></app-back-button>
   <div *ngIf="dataSource && showTable" class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
       <!-- Position Column -->

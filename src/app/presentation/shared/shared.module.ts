@@ -5,6 +5,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { AppMaterialModule } from 'src/app/app-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 export const customCurrencyMaskConfig = {
   align: 'left',
@@ -22,14 +23,14 @@ export const customCurrencyMaskConfig = {
 };
 
 @NgModule({
-  declarations: [LoadingComponent, ProductCardComponent],
-  exports: [LoadingComponent, ProductCardComponent ],
+  declarations: [LoadingComponent, ProductCardComponent, BackButtonComponent],
+  exports: [LoadingComponent, ProductCardComponent, BackButtonComponent],
   imports: [
     CommonModule,
     AppMaterialModule,
     FormsModule,
     ReactiveFormsModule,
     NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
-  ]
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

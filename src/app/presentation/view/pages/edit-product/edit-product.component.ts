@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { Router } from '@angular/router';
 import { format } from 'date-fns';
 import { Subscription } from 'rxjs';
 import { ProdutoService } from 'src/app/presentation/controllers/produto/produto.service';
@@ -32,7 +33,8 @@ export class EditProductComponent implements OnInit, OnDestroy {
 
   constructor(
     private produtoService: ProdutoService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -82,6 +84,10 @@ export class EditProductComponent implements OnInit, OnDestroy {
           (rej) => {}
         )
     );
+  }
+
+  returnToMenu(): void {
+    this.router.navigate(['menu']);
   }
 
   private getDataSource(): void {
