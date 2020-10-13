@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 import { PagesComponent } from './pages.component';
+import { ReadQrComponent } from './read-qr/read-qr.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'editar-produto', component: EditProductComponent },
       { path: 'deletar-produto', component: DeleteProductComponent },
       { path: 'meus-pedidos', component: MyReservationsComponent },
+      { path: 'ler-codigo', component: ReadQrComponent },
     ]
   }
 ];

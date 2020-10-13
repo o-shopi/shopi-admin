@@ -26,4 +26,8 @@ export class MenuComponent implements OnInit {
   myReservations(): void {
     this.router.navigate(['meus-pedidos']);
   }
+
+  readQR(): void {
+    this.router.navigate(['ler-codigo']);
+  }
 }

@@ -1,0 +1,16 @@
+<div
+  class="container-fluid h-100 d-flex justify-content-center align-items-center"
+>
+  <mat-card *ngIf="showTable" class="align-items-baseline d-flex pb-5 pt-4 bounce-in">
+    <zxing-scanner
+      [torch]="torchEnabled"
+      [(device)]="currentDevice"
+      (scanSuccess)="onCodeResult($event)"
+      [formats]="formatsEnabled"
+      [tryHarder]="tryHarder"
+      (permissionResponse)="onHasPermission($event)"
+      (camerasFound)="onCamerasFound($event)"
+      (torchCompatible)="onTorchCompatible($event)"
+    ></zxing-scanner>
+  </mat-card>
+</div>

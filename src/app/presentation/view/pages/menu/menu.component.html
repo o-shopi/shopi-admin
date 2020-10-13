@@ -2,6 +2,10 @@
   class="container-fluid h-100 d-flex justify-content-center align-items-center"
 >
   <div class="card-wrapper d-flex flex-column puff-in">
+    <mat-card class="large mb-5" (click)="readQR()">
+      <mat-icon>settings_overscan</mat-icon>
+      <p>Ler QR Code</p>
+    </mat-card>
     <div class="d-flex justify-content-between mb-5">
       <mat-card (click)="addProducts()">
         <mat-icon>add_circle</mat-icon>

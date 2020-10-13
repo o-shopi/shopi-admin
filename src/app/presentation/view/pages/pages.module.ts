@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
+import { ReadQrComponent } from './read-qr/read-qr.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { MyReservationsComponent } from './my-reservations/my-reservations.compo
     EditProductComponent,
     DeleteProductComponent,
     MyReservationsComponent,
+    ReadQrComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { MyReservationsComponent } from './my-reservations/my-reservations.compo
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
+    ZXingScannerModule,
   ],
 })
 export class PagesModule {}
